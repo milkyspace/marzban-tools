@@ -58,9 +58,6 @@
 						Статус<span>{% if user.status.value =='active' %}<div class="dot dot-green"></div>Активна{% elif user.status.value == 'limited' %}<div class="dot dot-yellow"></div>Ограничена{% elif user.status.value == 'expired' %}<div class="dot dot-red"></div>Истекла{% else %}<div class="dot dot-red"></div>Заблокирована{% endif %}</span>	
 				    </li>
 				    <li class="list-group-item d-flex justify-content-between align-items-center">
-						Трафик<span>{{ user.used_traffic | bytesformat }} / {% if not user.data_limit %}∞{% else %}{{ user.data_limit | bytesformat }}{% endif %}</span>
-				    </li>
-				    <li class="list-group-item d-flex justify-content-between align-items-center">
 				    	Истекает<span id="expire"></span><script>document.getElementById('expire').innerHTML = expireDateVar</script>
 				    </li>
 				    <li class="list-group-item d-flex justify-content-between align-items-center">
